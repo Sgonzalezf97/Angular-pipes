@@ -7,18 +7,38 @@ import { MenuItem } from 'primeng/api';
   styles: ``
 })
 export class MenuComponent {
-  public menuItems: MenuItem[]=[];
+  public menuItems: MenuItem[] = [];
 
-    ngOnInit() {
-        this.menuItems = [
-            {
-                label: 'New',
-                icon: 'pi pi-fw pi-plus',
-            },
-            {
-                label: 'Delete',
-                icon: 'pi pi-fw pi-trash'
-            }
-        ];
-    }
+  ngOnInit() {
+    this.menuItems = [
+      {
+        label: 'Pipes de Angular',
+        icon: 'pi pi-desktop',
+        items:[
+          {
+            label: 'Textos y Fechas',
+            icon: 'pi pi-align-left'
+          },
+          {
+            label: 'Números',
+            icon: 'pi pi-dollar'
+          },
+          {
+            label: 'No Comunes',
+            icon: 'pi pi-globe'
+          },
+        ]
+      },
+      {
+        label: 'Pipes personalizados',
+        icon: 'pi pi-cog',
+        items:[
+          {
+            label: 'Otro Elemento',
+            icon: 'pi pi-cog'
+          },
+        ]
+      },
+    ];
+  }
 }
