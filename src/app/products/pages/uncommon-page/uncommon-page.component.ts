@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, interval } from 'rxjs';
 
 @Component({
   selector: 'app-uncommon-page',
@@ -44,5 +45,15 @@ export class UncommonPageComponent {
     age:36,
     address:'Bogotá, Colombia'
   }
+
+  //Async
+  // --> este pipe sirve para subscribirse independientemente a un observable y hace la limpieza del mismo cuando se destruye el componente
+  public myObservableTimer: Observable <number> = interval(2000);
+
+  public promiseValue: Promise<string> = new Promise ((resolve, reject) => {
+    setTimeout(()=> {
+      resolve('tenemos data en la promesa')
+    },3500)
+  });
 
 }
