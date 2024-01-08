@@ -1,1 +1,28 @@
-<p>numbers-page works!</p>
+<p-panel header="Pipes Númericos" class="p-2">
+  <p>
+    Pipres incluídos en Angular - Usualmente usados common module
+  </p>
+</p-panel>
+
+<div class="grid">
+  <div class="col-12 sm:col-4 md:col-4">
+    <p-card header="Decimal Pipes" subheader="Valor real: {{totalSells}}">
+      {{totalSells+1234 | number:'1.2-2' }} <!-- Numero decimal redondeado con 2 a 2 decimales-->
+      {{totalSells+1234 | number:'1.2-4' }} <!-- Numero decimal redondeado con 2 a 4 decimales-->
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-4 md:col-4">
+    <p-card header="Currency Pipes" subheader="Valor real: {{totalSells}}">
+      {{totalSells | currency }} <!-- Numero en valor monetario -->
+      {{totalSells | currency:'COL' }} <!-- Numero en valor monetario colombia-->
+      {{totalSells | currency:'USD':'symbol-narrow' }} <!-- Numero en valor monetario + simbolo -->
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-4 md:col-4">
+    <p-card header="Percent Pipes" subheader="Valor real: {{percent}}">
+      {{percent | percent }} <!-- Porcentaje-->
+      <hr>
+      {{percent | percent:'1.2-2' }} <!-- Porcentaje con 2 decimales-->
+    </p-card>
+  </div>
+</div>
