@@ -1,1 +1,66 @@
-<p>basics-pages works!</p>
+<p-panel header="Pipes Básicos" class="p-2">
+  <p>
+    Pipres incluídos en Angular - Usualmente usados
+  </p>
+</p-panel>
+
+<div class="grid">
+  <div class="col-12 sm:col-4 md:col-4">
+    <p-card header="uppercase">
+      {{nameLower | uppercase}}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-4 md:col-4">
+    <p-card header="lowercase">
+      {{nameUpper | lowercase}}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-4 md:col-4">
+    <p-card header="titlecase">
+      {{fullName | titlecase}}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-6">
+    <p-card header="titlecase">
+      <ol>
+        <li> fecha </li>
+        <li> fecha | date</li>
+        <li> fecha | date:'short'</li>
+        <li> fecha | date:'long'</li>
+        <li> fecha | date:'MMM'</li>
+        <li> fecha | date:'MMM dd, yyyy'</li>
+      </ol>
+      <hr>
+      <ol>
+        <li> fecha | date:'long':'GMT-6'</li>
+        <li> fecha | date:'long':'GMT-4'</li>
+        <li> fecha | date:'long':'GMT-4':'es-CO'</li>
+        <li> fecha | date:'long':'GMT-4':'en-US'</li>
+        <li> fecha | date:'long':'GMT-4':'fr-CA'</li>
+      </ol>
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-6">
+    <p-card header="titlecase">
+      <ol>
+        <li> {{customDate}}</li>
+        <li> {{customDate | date}} </li> <!-- fecha con mes dia año -->
+        <li> {{customDate | date:'short'}} </li> <!-- fecah completa en numerico y con hora -->
+        <li> {{customDate | date:'long'}} </li> <!-- fecha completa y mes en letra -->
+        <li> {{customDate | date:'MMM'}} </li> <!-- solo el mes -->
+        <li> {{customDate | date:'MMM dd, yyyy'}} </li> <!-- mes dia, año -->
+      </ol>
+
+      <hr>
+      <ol>
+        <li> {{customDate | date:'long':'GMT-6'}} </li> <!-- fecha con mes dia año GMT-6-->
+        <li> {{customDate | date:'long':'GMT-4'}} </li> <!-- fecha con mes dia año GMT-4-->
+        <li> {{customDate | date:'long':'':'es-CO'}} </li> <!-- fecha con mes dia año GMT-4-->
+        <li> {{customDate | date:'long':'':'en-US'}} </li> <!-- fecha con mes dia año GMT-4-->
+        <li> {{customDate | date:'long':'':'fr-CA'}} </li> <!-- fecha con mes dia año GMT-4-->
+      </ol>
+
+    </p-card>
+  </div>
+</div>
+
